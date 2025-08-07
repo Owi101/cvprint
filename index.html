@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formato Currículum Editable</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      width: 800px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+    #photo {
+      width: 150px;
+      height: 200px;
+      border: 1px solid #888;
+      margin-top: 10px;
+      object-fit: cover;
+    }
+    .photo-container {
+      text-align: right;
+    }
+    .print-btn {
+      margin-top: 30px;
+      text-align: center;
+    }
+    @media print {
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Formato Currículum Editable</h2>
+
+    <div class="photo-container">
+      <label>Foto:</label>
+      <input type="file" accept="image/*" onchange="loadPhoto(event)" class="no-print">
+      <br>
+      <img id="photo" alt="Foto del usuario">
+    </div>
+
+    <label>Nombre:</label>
+    <input type="text" placeholder="Nombre completo">
+
+    <label>Formación Académica:</label>
+    <textarea placeholder="Licenciatura, Maestría, Doctorado..."></textarea>
+
+    <label>Formación Continua:</label>
+    <textarea placeholder="Diplomados, seminarios, cursos..."></textarea>
+
+    <label>Experiencia en el nivel:</label>
+    <textarea></textarea>
+
+    <label>Experiencia en puestos directivos:</label>
+    <textarea></textarea>
+
+    <label>Zona vulnerable / campaña de alfabetización:</label>
+    <textarea></textarea>
+
+    <label>Reconocimientos, premios y distinciones:</label>
+    <textarea></textarea>
+
+    <label>Grado académico / Universidad:</label>
+    <input type="text">
+
+    <label>Puesto que solicita:</label>
+    <input type="text">
+
+    <label>Acerca de mí:</label>
+    <textarea></textarea>
+
+    <div class="print-btn no-print">
+      <button onclick="window.print()">Imprimir</button>
+    </div>
+  </div>
+
+  <script>
+    function loadPhoto(event) {
+      const image = document.getElementById('photo');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    }
+  </script>
+</body>
+</html>

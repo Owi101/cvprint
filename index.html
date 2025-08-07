@@ -2,31 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Formato Currículum Editable</title>
+  <title>Currículum Editable</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
     }
     .container {
-      width: 800px;
+      max-width: 900px;
       margin: auto;
       border: 1px solid #ccc;
       padding: 20px;
     }
     h2 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     label {
-      display: block;
-      margin-top: 10px;
       font-weight: bold;
+      margin-top: 15px;
+      display: block;
     }
     input[type="text"], textarea {
       width: 100%;
-      padding: 8px;
-      margin-top: 5px;
+      padding: 6px;
+      margin-top: 4px;
+      margin-bottom: 10px;
       border: 1px solid #aaa;
       border-radius: 4px;
     }
@@ -34,24 +35,21 @@
       resize: vertical;
       height: 80px;
     }
-    #photo {
-      width: 150px;
-      height: 200px;
-      border: 1px solid #888;
-      margin-top: 10px;
-      object-fit: cover;
-    }
     .photo-container {
       text-align: right;
     }
+    #photo {
+      width: 150px;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid #555;
+    }
     .print-btn {
-      margin-top: 30px;
       text-align: center;
+      margin-top: 30px;
     }
     @media print {
-      .no-print {
-        display: none;
-      }
+      .no-print { display: none; }
     }
   </style>
 </head>
@@ -62,26 +60,55 @@
     <div class="photo-container">
       <label>Foto:</label>
       <input type="file" accept="image/*" onchange="loadPhoto(event)" class="no-print">
-      <br>
       <img id="photo" alt="Foto del usuario">
     </div>
 
     <label>Nombre:</label>
-    <input type="text" placeholder="Nombre completo">
+    <input type="text">
 
-    <label>Formación Académica:</label>
-    <textarea placeholder="Licenciatura, Maestría, Doctorado..."></textarea>
+    <label>Correo electrónico:</label>
+    <input type="text">
 
-    <label>Formación Continua:</label>
-    <textarea placeholder="Diplomados, seminarios, cursos..."></textarea>
+    <label>Dirección:</label>
+    <textarea placeholder="Calle, número, colonia, municipio, estado, C.P."></textarea>
+
+    <label>Antigüedad en el sistema educativo:</label>
+    <input type="text">
+    <label>Año de ingreso al GEM:</label>
+    <input type="text">
+    <label>Años en el gobierno federal:</label>
+    <input type="text">
+    <label>Años en escuelas particulares:</label>
+    <input type="text">
+
+    <label>Licenciatura:</label>
+    <input type="text">
+    <label>Maestría:</label>
+    <input type="text">
+    <label>Doctorado:</label>
+    <input type="text">
+    <label>Especialidad:</label>
+    <input type="text">
+
+    <label>Diplomado en:</label>
+    <input type="text">
+    <label>Curso de actualización en:</label>
+    <input type="text">
+    <label>Seminario en:</label>
+    <input type="text">
+    <label>Otros cursos, diplomados o especialidades:</label>
+    <textarea></textarea>
+
+    <label>Desempeño en zona vulnerable (años y enfoque):</label>
+    <textarea></textarea>
+
+    <label>Estudiantes alfabetizados (MIAA):</label>
+    <input type="text">
 
     <label>Experiencia en el nivel:</label>
     <textarea></textarea>
 
     <label>Experiencia en puestos directivos:</label>
-    <textarea></textarea>
-
-    <label>Zona vulnerable / campaña de alfabetización:</label>
     <textarea></textarea>
 
     <label>Reconocimientos, premios y distinciones:</label>
@@ -94,6 +121,23 @@
     <input type="text">
 
     <label>Acerca de mí:</label>
+    <textarea></textarea>
+
+    <label>Cargos desempeñados (docente, promotor, asesor):</label>
+    <textarea></textarea>
+
+    <label>Calificaciones:</label>
+    <input type="text" placeholder="Materia 1">
+    <input type="text" placeholder="Promedio">
+    <input type="text" placeholder="Año">
+    <input type="text" placeholder="Materia 2">
+    <input type="text" placeholder="Promedio">
+    <input type="text" placeholder="Año">
+    <input type="text" placeholder="Materia 3">
+    <input type="text" placeholder="Promedio">
+    <input type="text" placeholder="Año">
+
+    <label>Observaciones u otros comentarios:</label>
     <textarea></textarea>
 
     <div class="print-btn no-print">

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Currículum Editable V.2</title>
+  <title>Currículum Editable</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -34,6 +34,126 @@
     textarea {
       resize: vertical;
       height: 80px;
+    }
+    .photo-container {
+      text-align: right;
+    }
+    #photo {
+      width: 150px;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid #555;
+    }
+    .print-btn {
+      text-align: center;
+      margin-top: 30px;
+    }
+    @media print {
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Formato Currículum Editable</h2>
+
+    <div class="photo-container">
+      <label>Foto:</label>
+      <input type="file" accept="image/*" onchange="loadPhoto(event)" class="no-print">
+      <img id="photo" alt="Foto del usuario">
+    </div>
+
+    <label>Nombre:</label>
+    <input type="text">
+
+    <label>Correo electrónico:</label>
+    <input type="text">
+<label>Teléfono:</label>
+    <input type="text">
+    <label>Dirección:</label>
+    <textarea placeholder="Calle, número, colonia, municipio, estado, C.P."></textarea>
+
+    <label>Antigüedad en el sistema educativo:</label>
+    <input type="text">
+    <label>Año de ingreso al GEM:</label>
+    <input type="text">
+    <label>Años en el gobierno federal:</label>
+    <input type="text">
+    <label>Años en escuelas particulares:</label>
+    <input type="text">
+
+    <label>Licenciatura:</label>
+    <input type="text">
+    <label>Maestría:</label>
+    <input type="text">
+    <label>Doctorado:</label>
+    <input type="text">
+    <label>Especialidad:</label>
+    <input type="text">
+
+    <label>Diplomado en:</label>
+    <input type="text">
+    <label>Curso de actualización en:</label>
+    <input type="text">
+    <label>Seminario en:</label>
+    <input type="text">
+    <label>Otros cursos, diplomados o especialidades:</label>
+    <textarea></textarea>
+
+    <label>Desempeño en zona vulnerable (años y enfoque):</label>
+    <textarea></textarea>
+
+    <label>Estudiantes alfabetizados (MIAA):</label>
+    <input type="text">
+
+    <label>Experiencia en el nivel:</label>
+    <textarea></textarea>
+
+    <label>Experiencia en puestos directivos:</label>
+    <textarea></textarea>
+
+    <label>Reconocimientos, premios y distinciones:</label>
+    <textarea></textarea>
+
+    <label>Grado académico / Universidad:</label>
+    <input type="text">
+
+    <label>Puesto que solicita:</label>
+    <input type="text">
+
+    <label>Acerca de mí:</label>
+    <textarea></textarea>
+
+    <label>Cargos desempeñados (docente, promotor, asesor):</label>
+    <textarea></textarea>
+
+    <label>Calificaciones:</label>
+    <input type="text" placeholder="Licenciatura">
+    <input type="text" placeholder="Promedio">
+    <input type="text" placeholder="Año">
+    <input type="text" placeholder="Maestría">
+    <input type="text" placeholder="Promedio">
+    <input type="text" placeholder="Año">
+    <input type="text" placeholder="Doctorado">
+    <input type="text" placeholder="Promedio">
+    <input type="text" placeholder="Año">
+
+    <label>Observaciones u otros comentarios:</label>
+    <textarea></textarea>
+
+    <div class="print-btn no-print">
+      <button onclick="window.print()">Imprimir</button>
+    </div>
+  </div>
+
+  <script>
+    function loadPhoto(event) {
+      const image = document.getElementById('photo');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    }
+  </script>
+</body>
+</html>
     }
     .photo-container {
       text-align: right;
